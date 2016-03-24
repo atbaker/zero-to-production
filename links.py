@@ -20,14 +20,14 @@ def get_audience_numbers():
 
     return audience_numbers
 
-FLASK = """
+flask = """
 Some helpful links, just for you my friend:
 
 - Flask: http://bit.ly/1eU7R5M
 - twilio-python: http://bit.ly/1pKlW3E
 - Twilio tutorial: http://bit.ly/1Rk4ywF"""
 
-TESTING = """
+testing = """
 Oh, interested in testing?
 
 - py.test http://bit.ly/1UdIVR1
