@@ -7,14 +7,14 @@ TWILIO_NUMBER = os.environ.get('TWILIO_NUMBER')
 
 # Helpful link content
 FLASK = """
-Some helpful links, just for you my friend:
+Some helpful links:
 
 - Flask: http://bit.ly/1eU7R5M
 - twilio-python: http://bit.ly/1pKlW3E
 - Ngrok: https://ngrok.com/"""
 
 TESTING = """
-Oh, interested in testing?
+Interested in testing?
 
 - py.test http://bit.ly/1UdIVR1
 - coverage.py http://bit.ly/1MERWLa
