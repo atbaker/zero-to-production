@@ -5,6 +5,41 @@ import os, sys
 
 TWILIO_NUMBER = os.environ.get('TWILIO_NUMBER')
 
+# Helpful link content
+FLASK = """
+Some helpful links, just for you my friend:
+
+- Flask: http://bit.ly/1eU7R5M
+- twilio-python: http://bit.ly/1pKlW3E
+- Ngrok: https://ngrok.com/"""
+
+TESTING = """
+Oh, interested in testing?
+
+- py.test http://bit.ly/1UdIVR1
+- coverage.py http://bit.ly/1MERWLa
+- Unit testing web apps http://bit.ly/1UOSyEJ"""
+
+CI = """
+Continuous Integration (CI) and Travis resources:
+
+- CI overview http://bit.ly/28LwM2A
+- Travis http://bit.ly/28MY5Nt
+- Coveralls https://coveralls.io/"""
+
+HEROKU = """
+Deployment and Heroku:
+
+- Deploying http://bit.ly/28Ob0Nr
+- Heroku http://bit.ly/28Ni1h9"""
+
+CONTACT = """
+Thanks for coming out tonight! Helpful links:
+
+- Repo http://bit.ly/28LJgrM
+- My Twitter https://twitter.com/andrewtorkbaker
+- My email abaker@twilio.com"""
+
 # Instantiate our Twilio client
 client = TwilioRestClient()
 
@@ -20,29 +55,13 @@ def get_audience_numbers():
 
     return audience_numbers
 
-flask = """
-Some helpful links, just for you my friend:
-
-- Flask: http://bit.ly/1eU7R5M
-- twilio-python: http://bit.ly/1pKlW3E
-- Twilio tutorial: http://bit.ly/1Rk4ywF"""
-
-testing = """
-Oh, interested in testing?
-
-- py.test http://bit.ly/1UdIVR1
-- coverage.py http://bit.ly/1MERWLa
-- Unit testing web apps http://bit.ly/1UOSyEJ
-"""
-
-
 def send_helpful_links(section):
     """Sends some helpful links to the audience for a section in the presentation"""
     # Get the audience numbers
     numbers = get_audience_numbers()
 
     # Yes, this is dangerous and foolish
-    body = eval(section)
+    body = eval(section.upper())
 
     for number in numbers:
         client.messages.create(
