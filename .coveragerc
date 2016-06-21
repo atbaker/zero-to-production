@@ -1,0 +1,8 @@
+# Coverage configuration file
+
+[run]
+source = .
+
+omit = 
+  links.py
+  test_app.py
