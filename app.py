@@ -12,7 +12,7 @@ def hello():
 def reply():
     """Replies to text messages our Twilio number receives"""
     response = twiml.Response()
-    response.message('Welcome to the talk!')
+    response.message('Now deployed on Heroku :D')
 
     return str(response)
 
